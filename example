@@ -1,0 +1,33 @@
+let rec fac n =
+begin
+    if n > 1 then
+    begin
+        n * (n - 1)
+    end
+    else
+    begin
+        1
+    end
+end
+let rec fac2 n =
+begin
+    match n with
+    begin
+        | _ when n > 1 ->
+        begin
+            n * (n - 1)
+        end
+        | _ ->
+        begin
+            1
+        end
+    end
+end
+let a = 10 in
+let add x y =
+begin
+    let mutable k = x in
+    k <- k + y
+    k
+end
+do printfn "%A" (fac (add 5 5)) in

@@ -1,0 +1,84 @@
+#program #statement #program'
+#program' #statement #program'
+#program'
+#statement let #function-defn
+#statement do #expr in
+#statement #expr
+#function-defn ident #function-defn-arguments '=' #block-st
+#function-defn rec ident #function-defn-arguments '=' #block-st
+#function-defn ident '=' #expr in
+#function-defn mutable ident '=' #expr in
+#function-defn-arguments ident #function-defn-arguments
+#function-defn-arguments
+#block-st begin #program end
+#block-st begin end
+#expr #const
+#expr ident
+#expr #expr #expr
+#expr #if-expr
+#expr #match-expr
+#expr '(' #expr ')'
+#expr #expr '.' ident
+#expr #expr '.' '[' #expr ']'
+#expr #expr '.' '[' #slice-range ']'
+#expr #expr '.' '[' #slice-range ',' #slice-range ']'
+#expr #expr #infix-op #expr
+#expr '+' #expr
+#expr '-' #expr
+#expr not #expr
+#expr #expr '<-' #expr
+#expr #expr ',' #expr
+#expr null
+#expr '_'
+#slice-range #expr '..' 
+#slice-range '..' #expr 
+#slice-range #expr '..' #expr
+#slice-range '*'
+#if-expr if #expr then #block-st
+#if-expr if #expr then #block-st else #block-st
+#match-expr match #expr with begin #match-patterns end
+#match-patterns #match-pattern #match-patterns
+#match-patterns
+#match-pattern '|' #expr '->' #block-st
+#match-pattern '|' #expr when #expr '->' #block-st
+#infix-op '+'
+#infix-op '-'
+#infix-op '*'
+#infix-op '/'
+#infix-op '%'
+#infix-op '<'
+#infix-op '>'
+#infix-op '='
+#infix-op '<' '>'
+#infix-op '*' '*'
+#infix-op '&'
+#infix-op '&' '&'
+#infix-op '|'
+#infix-op '|' '|'
+#const sbyte
+#const byte
+#const int16
+#const uint16
+#const int32
+#const uint32
+#const nativeint
+#const unativeint
+#const int64
+#const uint64
+#const ieee32
+#const ieee64
+#const bignum
+#const decimal
+#const int
+#const xint
+#const reserved-ident-formats
+#const char
+#const string
+#const verbatim-string
+#const bytechar
+#const bytearray
+#const verbatim-bytearray
+#const triple-quoted-string
+#const '(' ')'
+#const false
+#const true
